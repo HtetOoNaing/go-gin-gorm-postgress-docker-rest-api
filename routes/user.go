@@ -1,9 +1,10 @@
 package routes
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+	"github.com/htetoonaing/go-gin-gorm-postgress-docker-rest-api/controller"
+)
 
 func GetUsers(router *gin.Engine) {
-	router.GET("/", func(ctx *gin.Context) {
-		ctx.String(200, "Hello World From Routes")
-	})
+	router.GET("/", controller.GetAllUsers)
 }
