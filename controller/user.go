@@ -12,6 +12,13 @@ func GetAllUsers(ctx *gin.Context) {
 	ctx.JSON(200, &users)
 }
 
+func CreateUser(ctx *gin.Context) {
+	var user models.User
+	ctx.BindJSON(&user)
+	config.DB.Create(&user)
+	ctx.JSON(200, &user)
+}
+
 func DeleteUser(ctx *gin.Context) {
 	var user models.User
 	config.DB.Where("id = ?", ctx.Param("id")).Delete(&user)
