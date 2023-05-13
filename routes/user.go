@@ -7,4 +7,5 @@ import (
 
 func GetUsers(router *gin.Engine) {
 	router.GET("/", controller.GetAllUsers)
+	// router.POST("/", controller.CreateUser)
 }
