@@ -15,7 +15,7 @@ func main() {
 
 	config.Connect()
 
-	routes.GetUsers(router)
+	routes.UserRoute(router)
 
 	router.Run(":8080")
 }
